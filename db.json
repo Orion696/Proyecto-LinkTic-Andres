@@ -1,0 +1,44 @@
+{
+  "reservations": [
+    {
+      "id": "a790",
+      "customer": "Jane Doe",
+      "service": "Dinner Reservation",
+      "date": "2024-08-22",
+      "time": "19:00",
+      "status": "confirmed"
+    },
+    {
+      "id": "60b5",
+      "customer": "Andres Lopez",
+      "service": "Reserva",
+      "date": "2024-08-22",
+      "time": "19:00",
+      "status": "confirmed"
+    },
+    {
+      "id": "ffbe",
+      "customer": "Andres Lopez",
+      "service": "Reserva",
+      "date": "2024-08-22",
+      "time": "19:00",
+      "status": "confirmed"
+    },
+    {
+      "id": "cdb2",
+      "customer": "Julina Mejia",
+      "service": "Reserva",
+      "date": "2024-08-22",
+      "time": "19:00",
+      "status": "confirmed"
+    },
+    {
+      "id": "d8bc",
+      "customer": "Jane Doe",
+      "service": "Dinner Reservation",
+      "date": "2024-08-22",
+      "time": "19:00",
+      "status": "confirmed"
+    }
+  ]
+}
