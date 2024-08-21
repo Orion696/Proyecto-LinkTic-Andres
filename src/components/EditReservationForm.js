@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Button, Form, Modal, Row, Col } from 'react-bootstrap';
+import '../styles/EditReservationForm.css';
 
 const EditReservationForm = ({ show, handleClose, reservation }) => {
   const [customer, setCustomer] = useState(reservation.customer || '');
@@ -27,7 +28,7 @@ const EditReservationForm = ({ show, handleClose, reservation }) => {
   };
 
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose} className="edit-reservation-modal">
       <Modal.Header closeButton>
         <Modal.Title>Edit Reservation</Modal.Title>
       </Modal.Header>
@@ -53,25 +54,30 @@ const EditReservationForm = ({ show, handleClose, reservation }) => {
             />
           </Form.Group>
 
-          <Form.Group controlId="date" className="mt-3">
-            <Form.Label>Date</Form.Label>
-            <Form.Control
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              required
-            />
-          </Form.Group>
-
-          <Form.Group controlId="time" className="mt-3">
-            <Form.Label>Time</Form.Label>
-            <Form.Control
-              type="time"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-              required
-            />
-          </Form.Group>
+          <Row className="mt-3">
+            <Col md={6}>
+              <Form.Group controlId="date">
+                <Form.Label>Date</Form.Label>
+                <Form.Control
+                  type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col md={6}>
+              <Form.Group controlId="time">
+                <Form.Label>Time</Form.Label>
+                <Form.Control
+                  type="time"
+                  value={time}
+                  onChange={(e) => setTime(e.target.value)}
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
 
           <Form.Group controlId="status" className="mt-3">
             <Form.Label>Status</Form.Label>

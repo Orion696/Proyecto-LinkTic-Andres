@@ -1,0 +1,98 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #ffe1d0, lightblue);
+}
+
+.reservations-container {
+  min-height: 100vh;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservations-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-custom {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.card-body-custom {
+  padding: 20px;
+}
+
+.reservations-table th,
+.reservations-table td {
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.action-button {
+  width: 100px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: lightblue;
+  color: #fff;
+}
+
+.add-reservation-button {
+  background-color: #0fd48e !important;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none !important;
+  transition: background-color 0.3s ease, transform 0.3s ease !important;
+}
+
+.add-reservation-button:hover {
+  background-color: #0abc7a;
+  transform: scale(1.05);
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .reservations-title {
+    font-size: 2rem;
+  }
+
+  .card-custom {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .reservations-table th,
+  .reservations-table td {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .action-button {
+    width: 80px;
+  }
+}

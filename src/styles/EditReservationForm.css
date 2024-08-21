@@ -1,0 +1,58 @@
+.edit-reservation-modal .modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+  
+  .edit-reservation-modal .modal-header {
+    background-color: #0fd48e;
+    color: white;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .edit-reservation-modal .modal-title {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .edit-reservation-modal .modal-body {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .edit-reservation-modal .form-label {
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .edit-reservation-modal .form-control, 
+  .edit-reservation-modal .form-select {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .edit-reservation-modal .form-select {
+    cursor: pointer;
+  }
+  
+  .edit-reservation-modal .btn-primary {
+    display: block;
+    margin: 20px auto 0 auto;
+    background-color: #0fd48e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .edit-reservation-modal .btn-primary:hover {
+    background-color: #0abc7a;
+    transform: scale(1.05);
+    color: white;
+  }
+  
