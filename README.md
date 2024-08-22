@@ -19,13 +19,13 @@ Este proyecto es un sistema de reservas diseñado para servicios como restaurant
 
 ## Arquitectura de la Aplicación
 
-La arquitectura del sistema está compuesta por un frontend desarrollado en React.js que interactúa con un backend en Node.js y Express, conectado a una API RESTful falsa configurada mediante `json-server` para simular la persistencia de datos.
+La arquitectura del sistema está compuesta por un frontend desarrollado en React.js que interactúa con un backend en Node.js y Express, utilizando una API RESTful para simular la persistencia de datos con un archivo `db.json`.
 
 ### Descripción de la Arquitectura
 
 - **Frontend:** Implementado en React.js, utilizando Redux para el manejo del estado global y Redux-Sagas para manejar las operaciones asíncronas. React-Bootstrap se utiliza para el diseño de la interfaz.
 - **Backend:** Servido por Node.js y Express, que proporciona endpoints para operaciones CRUD sobre las reservas.
-- **API RESTful Falsa:** Configurada con `json-server`, simula una base de datos para las operaciones CRUD.
+- **API RESTful Falsa:** Simula una base de datos para las operaciones CRUD, con almacenamiento de datos en un archivo `db.json`.
 
 ## Tecnologías Utilizadas
 
@@ -33,7 +33,6 @@ La arquitectura del sistema está compuesta por un frontend desarrollado en Reac
 - **Redux:** Manejo del estado global de la aplicación.
 - **Redux-Sagas:** Manejo de operaciones asíncronas en Redux.
 - **Node.js y Express:** Servidor backend que maneja las solicitudes HTTP.
-- **json-server:** Simula una API RESTful para el almacenamiento de datos.
 - **React-Bootstrap:** Biblioteca de componentes para estilizar la interfaz de usuario.
 - **ReactToastify:** Biblioteca para manejar las notificaciones y alertas en la aplicación.
 - **Vercel:** Plataforma de despliegue del frontend.
@@ -68,19 +67,15 @@ Asegúrate de tener instalados los siguientes programas:
    npm install
    ```
 
-4. Inicia el backend (API Falsa) en el puerto 5000:
-
-   ```bash
-   npm run server
-   ```
-
-5. Si el puerto 5000 ya está en uso, inicia el backend Express en el puerto 5001:
+4. Inicia el backend en el puerto 5001:
 
    ```bash
    node backend/index.js
    ```
 
-6. Inicia la aplicación React en el frontend:
+   > **Nota:** Asegúrate de que el archivo `db.json` se encuentra en la carpeta `backend`.
+
+5. Inicia la aplicación React en el frontend:
 
    ```bash
    npm start
@@ -144,7 +139,7 @@ Las alertas están diseñadas para ser discretas pero efectivas, mejorando la ex
 
 ## Pruebas con Jest
 
-Este proyecto incluye pruebas unitarias configuradas con Jest y `@testing-library/react`. La prueba esta diseñadas para garantizar que el componente funcionen como se espera.
+Este proyecto incluye pruebas unitarias configuradas con Jest y `@testing-library/react`. Estas pruebas están diseñadas para garantizar que los componentes funcionen como se espera.
 
 ### Ejecución de Pruebas
 
@@ -154,7 +149,7 @@ Para ejecutar las pruebas, puedes utilizar el siguiente comando:
 npm test
 ```
 
-Esta prueba asegura que el texto "Welcome to the Reservation System" aparece en el documento.
+La prueba asegura que el texto "Welcome to the Reservation System" aparece en el documento de la `HomePage`.
 
 ## Configuración de CI/CD
 

@@ -1,0 +1,12 @@
+{
+  "reservations": [
+    {
+      "id": 3,
+      "customer": "Miguel Angel",
+      "service": "Dinner Reservation",
+      "date": "2024-08-23",
+      "time": "19:00",
+      "status": "confirmed"
+    }
+  ]
+}
