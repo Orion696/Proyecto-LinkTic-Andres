@@ -1,70 +1,158 @@
-# Getting Started with Create React App
+# Sistema de Reservas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es un sistema de reservas diseñado para servicios como restaurantes u hoteles. Proporciona una interfaz de usuario para realizar, modificar, cancelar y visualizar reservas, utilizando tecnologías modernas como React.js, Node.js, Express, Redux, y Sagas.
 
-## Available Scripts
+## Tabla de Contenidos
 
-In the project directory, you can run:
+- [Arquitectura de la Aplicación](#arquitectura-de-la-aplicación)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Configuración del Proyecto](#configuración-del-proyecto)
+- [Ejecutar el Proyecto Localmente](#ejecutar-el-proyecto-localmente)
+- [Documentación de la API](#documentación-de-la-api)
+- [Manejo del Estado con Redux y Sagas](#manejo-del-estado-con-redux-y-sagas)
+- [Estilización de Componentes](#estilización-de-componentes)
+- [Alertas y Notificaciones](#alertas-y-notificaciones)
+- [Configuración de CI/CD](#configuración-de-cicd)
+- [Despliegue](#despliegue)
+- [Contribuciones](#contribuciones)
 
-### `npm start`
+## Arquitectura de la Aplicación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La arquitectura del sistema está compuesta por un frontend desarrollado en React.js que interactúa con un backend en Node.js y Express, conectado a una API RESTful falsa configurada mediante `json-server` para simular la persistencia de datos.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Descripción de la Arquitectura
 
-### `npm test`
+- **Frontend:** Implementado en React.js, utilizando Redux para el manejo del estado global y Redux-Sagas para manejar las operaciones asíncronas. React-Bootstrap se utiliza para el diseño de la interfaz.
+- **Backend:** Servido por Node.js y Express, que proporciona endpoints para operaciones CRUD sobre las reservas.
+- **API RESTful Falsa:** Configurada con `json-server`, simula una base de datos para las operaciones CRUD.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologías Utilizadas
 
-### `npm run build`
+- **React.js:** Biblioteca principal para construir la interfaz de usuario.
+- **Redux:** Manejo del estado global de la aplicación.
+- **Redux-Sagas:** Manejo de operaciones asíncronas en Redux.
+- **Node.js y Express:** Servidor backend que maneja las solicitudes HTTP.
+- **json-server:** Simula una API RESTful para el almacenamiento de datos.
+- **React-Bootstrap:** Biblioteca de componentes para estilizar la interfaz de usuario.
+- **ReactToastify:** Biblioteca para manejar las notificaciones y alertas en la aplicación.
+- **Vercel:** Plataforma de despliegue del frontend.
+- **GitHub Actions:** Configuración de CI/CD para el proyecto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Configuración del Proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Pre-requisitos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Asegúrate de tener instalados los siguientes programas:
 
-### `npm run eject`
+- Node.js (v14 o superior)
+- npm (v6 o superior)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Instalación
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clona este repositorio:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   git clone https://github.com/Orion696/Proyecto-LinkTic-Andres.git
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Navega al directorio del proyecto:
 
-## Learn More
+   ```bash
+   cd Proyecto-LinkTic-Andres
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Instala las dependencias del proyecto:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm install
+   ```
 
-### Code Splitting
+4. Inicia el backend (API Falsa) en el puerto 5000:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm run server
+   ```
 
-### Analyzing the Bundle Size
+5. Si el puerto 5000 ya está en uso, inicia el backend Express en el puerto 5001:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   node backend/index.js
+   ```
 
-### Making a Progressive Web App
+6. Inicia la aplicación React en el frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   npm start
+   ```
 
-### Advanced Configuration
+## Ejecutar el Proyecto Localmente
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Para ejecutar el proyecto localmente:
 
-### Deployment
+1. Asegúrate de que tanto el backend como el frontend estén corriendo.
+2. Accede a `http://localhost:3000` en tu navegador para interactuar con la aplicación.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Documentación de la API
 
-### `npm run build` fails to minify
+La API RESTful proporciona los siguientes endpoints para gestionar reservas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **GET /reservations:** Obtiene todas las reservas.
+- **POST /reservations:** Crea una nueva reserva.
+- **PUT /reservations/:id:** Actualiza una reserva existente.
+- **DELETE /reservations/:id:** Elimina una reserva.
+
+Puedes encontrar la documentación completa de la API, incluyendo ejemplos de uso, en Postman [aquí](https://go.postman.co/workspace/311a1ac0-e1ed-48f4-8065-f7915a448b48/documentation/26741493-d3b87f71-f530-4240-b75f-b44b5bcc1edc?entity=request-06c5698c-9231-4b7a-b00d-a90c8523b373).
+
+## Manejo del Estado con Redux y Sagas
+
+### Configuración de Redux
+
+El estado global de la aplicación está manejado mediante Redux, lo que permite una gestión eficiente del estado de las reservas a lo largo de los distintos componentes de la aplicación.
+
+- **Store:** Configurada en `src/redux/store.js`, donde se combinan los reducers y se integran los middlewares como `redux-saga`.
+- **Reducers:** Los reducers para las reservas están ubicados en `src/redux/reducers/reservationsReducer.js`.
+- **Actions:** Las acciones que manejan el flujo de datos en la aplicación están definidas en `src/redux/actions/reservationActions.js`.
+
+### Configuración de Redux-Sagas
+
+Redux-Sagas se utiliza para manejar las operaciones asíncronas, como la obtención de datos y la actualización de las reservas.
+
+- **Sagas:** Configuradas en `src/redux/sagas/reservationSagas.js`, gestionan los efectos secundarios como solicitudes HTTP.
+
+## Estilización de Componentes
+
+El diseño de la aplicación se basa en `React-Bootstrap`, con estilos personalizados para garantizar una experiencia de usuario fluida y moderna.
+
+### Componentes Principales
+
+- **HomePage:** Página principal que guía al usuario hacia la gestión de reservas.
+- **ReservationsPage:** Página donde los usuarios pueden ver todas las reservas, añadir nuevas, editar o eliminar las existentes.
+- **AddReservationForm:** Formulario estilizado para la adición de nuevas reservas.
+- **EditReservationForm:** Formulario dentro de un modal para editar reservas existentes.
+
+Todos los formularios y componentes han sido estilizados usando CSS modular, y se encuentran dentro de la carpeta `src/styles`.
+
+## Alertas y Notificaciones
+
+En este proyecto se han implementado notificaciones usando la librería `ReactToastify`. Esta herramienta permite mostrar alertas y notificaciones flotantes que aparecen en la esquina superior derecha de la pantalla cuando un usuario realiza una operación, como agregar, editar o eliminar una reserva.
+
+- **Instalación:** `ReactToastify` está instalado y configurado en el proyecto como dependencia.
+- **Uso:** Las notificaciones se disparan tras las acciones del usuario, proporcionando un feedback inmediato sobre el éxito o el fracaso de las operaciones.
+
+Las alertas están diseñadas para ser discretas pero efectivas, mejorando la experiencia de usuario sin interrumpir el flujo de trabajo.
+
+## Configuración de CI/CD
+
+El proyecto está configurado para utilizar GitHub Actions para CI/CD. Cada vez que se realiza un `push` o se abre un `pull request` en la rama `main`, se ejecutan las siguientes acciones:
+
+- **Instalación de dependencias:** Verifica que todas las dependencias estén instaladas correctamente.
+- **Ejecución de pruebas:** Si hay pruebas configuradas, se ejecutan en este paso.
+- **Construcción del proyecto:** Se genera la build de la aplicación lista para producción.
+
+El archivo de configuración de GitHub Actions se encuentra en `.github/workflows/ci.yml`.
+
+## Despliegue
+
+Este proyecto está desplegado en Vercel. Puedes ver la versión en vivo en el siguiente enlace:
+
+[Ver el proyecto en Vercel](https://proyecto-link-tic-andres.vercel.app/)
