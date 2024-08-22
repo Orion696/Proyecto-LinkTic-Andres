@@ -12,6 +12,7 @@ Este proyecto es un sistema de reservas diseñado para servicios como restaurant
 - [Manejo del Estado con Redux y Sagas](#manejo-del-estado-con-redux-y-sagas)
 - [Estilización de Componentes](#estilización-de-componentes)
 - [Alertas y Notificaciones](#alertas-y-notificaciones)
+- [Pruebas con Jest](#pruebas-con-jest)
 - [Configuración de CI/CD](#configuración-de-cicd)
 - [Despliegue](#despliegue)
 - [Contribuciones](#contribuciones)
@@ -141,12 +142,26 @@ En este proyecto se han implementado notificaciones usando la librería `ReactTo
 
 Las alertas están diseñadas para ser discretas pero efectivas, mejorando la experiencia de usuario sin interrumpir el flujo de trabajo.
 
+## Pruebas con Jest
+
+Este proyecto incluye pruebas unitarias configuradas con Jest y `@testing-library/react`. La prueba estq diseñadas para garantizar que el componente funcionen como se espera.
+
+### Ejecución de Pruebas
+
+Para ejecutar las pruebas, puedes utilizar el siguiente comando:
+
+```bash
+npm test
+```
+
+Esta prueba asegura que el texto "Welcome to the Reservation System" aparece en el documento.
+
 ## Configuración de CI/CD
 
 El proyecto está configurado para utilizar GitHub Actions para CI/CD. Cada vez que se realiza un `push` o se abre un `pull request` en la rama `main`, se ejecutan las siguientes acciones:
 
 - **Instalación de dependencias:** Verifica que todas las dependencias estén instaladas correctamente.
-- **Ejecución de pruebas:** Si hay pruebas configuradas, se ejecutan en este paso.
+- **Ejecución de pruebas:** Se ejecutan las pruebas unitarias configuradas con Jest.
 - **Construcción del proyecto:** Se genera la build de la aplicación lista para producción.
 
 El archivo de configuración de GitHub Actions se encuentra en `.github/workflows/ci.yml`.
