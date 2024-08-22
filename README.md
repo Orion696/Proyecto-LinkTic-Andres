@@ -144,7 +144,7 @@ Las alertas están diseñadas para ser discretas pero efectivas, mejorando la ex
 
 ## Pruebas con Jest
 
-Este proyecto incluye pruebas unitarias configuradas con Jest y `@testing-library/react`. La prueba estq diseñadas para garantizar que el componente funcionen como se espera.
+Este proyecto incluye pruebas unitarias configuradas con Jest y `@testing-library/react`. La prueba esta diseñadas para garantizar que el componente funcionen como se espera.
 
 ### Ejecución de Pruebas
 
